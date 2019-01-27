@@ -9,7 +9,17 @@
     <div class="title">
       <h1>Bakr's Dozen - Index Page</h1>
       <p>~ A little extra for the baker in you ~</p>
+      <ul>
+        <% for (let i = 0; i < pastries.length; i++) { %>
+            <li>
+              <a href="/bakersdozen/<%=pastries[i].id%>"><%=pastries[i].name%></a>
 
+              <form action="/bakersdozen/<%=pastries[i].id%>?_method=DELETE" method="POST">
+                <input type="submit" name="delete" value="Delete">
+              </form>
+            </li>
+        <% } %>
+      </ul>
       <a href="/bakersdozen/new">Create New Pastry</a>
     </div>
   </body>
