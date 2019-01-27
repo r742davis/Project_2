@@ -18,6 +18,39 @@ app.use(express.static('public')) //CSS
 
 // ROUTES //
 //----------------------------------------//
+//Delete
+
+//Edit
+
+//Update
+
+//Seed
+
+//Index
+app.get('/bakersdozen', (req, res) => {
+  res.render(
+    'index.ejs',
+    {
+    }
+)
+})
+
+//New
+app.get('/bakersdozen/new', (req, res) => {
+  res.render(
+    'new.ejs'
+  )
+})
+
+//Show
+app.get('/bakersdozen/:id', (req, res) => {
+  res.render(
+    'show.ejs'
+  )
+})
+
+//Create
+
 
 // APP LISTENER //
 //----------------------------------------//
@@ -27,7 +60,7 @@ app.listen(3000, () => {
 
 // MONGO CONTROLLER //
 //----------------------------------------//
-mongoose.connect('mongodb://localhost:27017/products', {useNewUrlParser:true})
+mongoose.connect('mongodb://localhost:27017/bakersdozen', {useNewUrlParser:true})
 mongoose.connection.once('open', () => {
   console.log('---Connected to Mongo---');
 })
