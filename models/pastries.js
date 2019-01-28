@@ -8,6 +8,8 @@ const pastrySchema = new mongoose.Schema({
     type:  {
       type: String,
       required: true },
+    img: String,
+    recipe: String,
     price: Number,
     qty: Number,
     }, {timestamps: true}

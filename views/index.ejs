@@ -2,27 +2,40 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Index</title>
     <link rel="stylesheet" href="/css/app.css">
   </head>
   <body>
-    <div class="title">
-      <h1>Bakr's Dozen - Index Page</h1>
-      <p>~ A little extra for the baker in you ~</p>
-      <ul>
-        <% for (let i = 0; i < pastries.length; i++) { %>
-            <li>
-              <a href="/bakersdozen/<%=pastries[i].id%>"><%=pastries[i].name%></a>
-                <div class="edit-delete-btns">
-                  <a class="btn" href="/bakersdozen/<%=pastries[i].id%>/edit">Edit</a>
-                  <form action="/bakersdozen/<%=pastries[i].id%>?_method=DELETE" method="POST">
-                    <input class="btn" type="submit" name="delete" value="Delete">
-                  </form>
-              </div>
-            </li>
-        <% } %>
-      </ul>
-      <a href="/bakersdozen/new">Create New Pastry</a>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Bakeries</a>
+      <a href="#">Recipes</a>
+      <a href="#">About</a>
+    </nav>
+    <div class="background-img">
+      <div class="title">
+        <h1>Baker's Dozen</h1>
+        <p>~ A little extra for the baker in you ~</p>
+      </div>
     </div>
+    <a class="btn" href="/bakersdozen/new">Create New Pastry</a>
+    <div class="container">
+    <ul>
+      <% for (let i = 0; i < pastries.length; i++) { %>
+          <li>
+            <a href="/bakersdozen/<%=pastries[i].id%>"><%=pastries[i].name%></a>
+            <% if (pastries[i].img != undefined) { %>
+              <img src="<%=pastries[i].img%>" alt="">
+            <% } %>
+              <div class="edit-delete-btns">
+                <a class="btn" href="/bakersdozen/<%=pastries[i].id%>/edit">Edit</a>
+                <form action="/bakersdozen/<%=pastries[i].id%>?_method=DELETE" method="POST">
+                  <input class="btn" type="submit" name="delete" value="Delete">
+                </form>
+            </div>
+          </li>
+      <% } %>
+    </ul>
+  </div>
   </body>
 </html>

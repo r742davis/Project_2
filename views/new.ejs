@@ -3,11 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>Create New Pastry - Baker's Dozen</title>
+    <link rel="stylesheet" href="/css/app.css">
   </head>
   <body>
     <h1>Baker's Dozen</h1>
     <h1>New Route</h1>
-
+      <form action="/bakersdozen" method="POST">
+        <label for="name">Name</label>
+          <input type="text" name="name">
+        <label for="type">Type</label>
+          <input type="text" name="type">
+        <label for="price">Price</label>
+          <input type="text" name="price">
+        <label for="qty">Quantity</label>
+          <input type="text" name="qty">
+        <input type="submit" name="submit" value="Submit">
+      </form>
     <a href="/bakersdozen">Back to Index Page</a>
   </body>
 </html>

@@ -6,6 +6,7 @@ const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
+// const bcrypt = require('bcrypt')
 
 const Pastry = require('./models/pastries.js')
 
@@ -14,6 +15,13 @@ const Pastry = require('./models/pastries.js')
 app.use(express.urlencoded({extended:true})) //Post
 app.use(methodOverride('_method')) //Delete
 app.use(express.static('public')) //CSS
+
+// SESSION CONFIGURATION //
+// app.use(session({
+//   secret: process.env.SECRET,
+//   resave: false,
+//   saveUnitialized: false
+// }))
 
 // CONTROLLER //
 //----------------------------------------//
@@ -52,6 +60,8 @@ app.get('/bakersdozen/seedTest', (req, res) => {
     {
       name: 'Cinnamon Roll',
       type: 'roll',
+      img: "https://www.onceuponachef.com/images/2012/04/cinnamon-rolls-finished.jpg",
+      recipe: "",
       price: 2.50,
       qty: 2
     }
@@ -75,9 +85,8 @@ app.get('/bakersdozen', (req, res) => {
 
 //New
 app.get('/bakersdozen/new', (req, res) => {
-  res.render(
-    'new.ejs'
-  )
+  res.render('new.ejs')
+  res.redirect('/bakersdozen')
 })
 
 //Show
@@ -95,7 +104,7 @@ app.get('/bakersdozen/:id', (req, res) => {
 //Create
 app.post('/bakersdozen/', (req, res) => {
   Pastry.create(req.body, (error, createdPastry) => {
-    res.send(createdPastry)
+    res.redirect('/bakersdozen')
   })
 })
 
