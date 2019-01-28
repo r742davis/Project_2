@@ -1,20 +1,32 @@
 //Baker's Dozen
 
 // DEPENDENCIES //
-//----------------------------------------//
+//________________________________________//
 const express = require('express')
-const app = express()
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
+const app = express()
 // const bcrypt = require('bcrypt')
 
 const Pastry = require('./models/pastries.js')
 
+// PORT //
+//________________________________________//
+const PORT = process.env.PORT || 3000
+
+// MONGO CONTROLLER //
+//________________________________________//
+mongoose.connect('mongodb://localhost:27017/bakersdozen', {useNewUrlParser:true})
+mongoose.connection.once('open', () => {
+  console.log('---Connected to Mongo---');
+})
+
 // MIDDLEWARE //
-//----------------------------------------//
+//________________________________________//
 app.use(express.urlencoded({extended:true})) //Post
 app.use(methodOverride('_method')) //Delete
 app.use(express.static('public')) //CSS
+app.use(express.json()) //JSON parser
 
 // SESSION CONFIGURATION //
 // app.use(session({
@@ -24,10 +36,10 @@ app.use(express.static('public')) //CSS
 // }))
 
 // CONTROLLER //
-//----------------------------------------//
+//________________________________________//
 
 // ROUTES //
-//----------------------------------------//
+//________________________________________//
 //Delete
 app.delete('/bakersdozen/:id', (req, res) => {
   Pastry.findByIdAndRemove(req.params.id, (error, data) => {
@@ -109,14 +121,7 @@ app.post('/bakersdozen/', (req, res) => {
 })
 
 // APP LISTENER //
-//----------------------------------------//
-app.listen(3000, () => {
-  console.log("Can you smell what's cooking?");
-})
-
-// MONGO CONTROLLER //
-//----------------------------------------//
-mongoose.connect('mongodb://localhost:27017/bakersdozen', {useNewUrlParser:true})
-mongoose.connection.once('open', () => {
-  console.log('---Connected to Mongo---');
+//________________________________________//
+app.listen(PORT, () => {
+  console.log("Can you smell what's cooking? ---Port " + PORT +"---");
 })
