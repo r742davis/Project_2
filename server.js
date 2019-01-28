@@ -5,6 +5,7 @@
 const express = require('express')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
+const db = mongoose.connection
 const app = express()
 // const bcrypt = require('bcrypt')
 
@@ -16,8 +17,9 @@ const PORT = process.env.PORT || 3000
 
 // MONGO CONTROLLER //
 //________________________________________//
-mongoose.connect('mongodb://localhost:27017/bakersdozen', {useNewUrlParser:true})
-mongoose.connection.once('open', () => {
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/' + 'bakersdozen'
+mongoose.connect(MONGODB_URI, {useNewUrlParser:true})
+db.on('open', () => {
   console.log('---Connected to Mongo---');
 })
 
@@ -82,6 +84,16 @@ app.get('/bakersdozen/seedTest', (req, res) => {
   })
 })
 
+app.get('/', (req, res) => {
+  Pastry.find({}, (error, allPastries) => {
+    res.render(
+      'index.ejs',
+      {
+        pastries:allPastries
+      }
+  )
+  })
+})
 
 //Index
 app.get('/bakersdozen', (req, res) => {
