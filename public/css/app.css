@@ -1,6 +1,43 @@
 @import url('https://fonts.googleapis.com/css?family=Cookie|Courgette|Damion|Handlee|Homemade+Apple');
 
+/************************/
+/*** GENERAL ELEMENTS ***/
+/************************/
+ul {
+
+}
+li {
+  list-style: none;
+}
+
+/************************/
+/*** BUTTONS & INPUTS ***/
+/************************/
+.btn {
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px;
+  color: white;
+  background-color: black;
+  border-radius: 1em;
+  font-family: 'Damion', cursive;
+  font-size: 18px;
+}
+.edit-delete-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/***************/
+/*** CLASSES ***/
+/***************/
 .title {
   text-align: center;
   font-family: 'Courgette', cursive;
 }
+
+
+/******************/
+/*** ANIMATIONS ***/
+/******************/
