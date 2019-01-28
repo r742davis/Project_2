@@ -84,14 +84,10 @@ app.get('/bakersdozen/seedTest', (req, res) => {
   })
 })
 
+//Heroku redirect
 app.get('/', (req, res) => {
   Pastry.find({}, (error, allPastries) => {
-    res.render(
-      'index.ejs',
-      {
-        pastries:allPastries
-      }
-  )
+    res.redirect('/bakersdozen')
   })
 })
 
