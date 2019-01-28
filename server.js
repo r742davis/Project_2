@@ -28,8 +28,23 @@ app.delete('/bakersdozen/:id', (req, res) => {
 })
 
 //Edit
+app.get('/bakersdozen/:id/edit', (req, res) => {
+  Pastry.findById(req.params.id, (error, foundPastry) => {
+    res.render(
+      'edit.ejs',
+      {
+        pastry:foundPastry
+      }
+    )
+  })
+})
 
 //Update
+app.put('/bakersdozen/:id', (req, res) => {
+  Pastry.findByIdAndUpdate(req.params.id, req.body, {new:true}, (error, updatedPastry) => {
+    res.redirect('/bakersdozen')
+  })
+})
 
 //Seed
 app.get('/bakersdozen/seedTest', (req, res) => {

@@ -13,10 +13,10 @@
         <% for (let i = 0; i < pastries.length; i++) { %>
             <li>
               <a href="/bakersdozen/<%=pastries[i].id%>"><%=pastries[i].name%></a>
-
-              <form action="/bakersdozen/<%=pastries[i].id%>?_method=DELETE" method="POST">
-                <input type="submit" name="delete" value="Delete">
-              </form>
+                <a href="/bakersdozen/<%=pastries[i].id%>/edit">Edit</a>
+                <form action="/bakersdozen/<%=pastries[i].id%>?_method=DELETE" method="POST">
+                  <input type="submit" name="delete" value="Delete">
+                </form>
             </li>
         <% } %>
       </ul>
