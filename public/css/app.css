@@ -43,12 +43,11 @@ nav {
 }
 nav a {
   color: white;
-  /* background: #ffcaeb; */
-  padding: 0.5em;
-  margin: 10px;
-  border: 2px solid white;
+  padding: 0.2em;
+  margin: 5px;
   border-radius: 2em;
-  font-size: 18px;
+  font-size: 2em;
+  font-family: 'Cookie', cursive;
 }
 nav a:hover {
   color: #ffcaeb;
@@ -58,6 +57,7 @@ nav a:hover {
   background-image: url("https://images.unsplash.com/photo-1523294587484-bae6cc870010?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1164&q=80");
   background-repeat: no-repeat;
   background-size: cover;
+  opacity: 0.8;
   min-height: 600px;
   position: relative;
 }
@@ -65,13 +65,22 @@ nav a:hover {
   background: white;
   border-radius: 5em;
   padding: 2em;
-  max-width: 200px;
-  max-height: 200px;
+  width: 40px;
+  height: 40px;
   text-align: center;
 }
 .title-container h1 {
-  transform: rotate(-5deg);
+  transform: rotate(-10deg);
   font-family: "Homemade Apple", cursive;
+  line-height: 1.0;
+}
+span {
+  font-size: 2em;
+  color: whitesmoke;
+  margin: 20px;
+}
+span:hover {
+  color: #ffcaeb;
 }
 
 /************************/
