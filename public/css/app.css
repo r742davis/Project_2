@@ -30,19 +30,48 @@ input {
 a {
   text-decoration: none;
 }
+
+/**********************/
+/*** NAVIGATION BAR ***/
+/**********************/
 nav {
-  background: #ffcaeb;
-  border-bottom: 2px solid white;
   display: flex;
   flex-direction: row;
-  align-self: center;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 nav a {
   color: white;
+  /* background: #ffcaeb; */
   padding: 0.5em;
-  border-right: 2px solid white;
+  margin: 10px;
+  border: 2px solid white;
+  border-radius: 2em;
   font-size: 18px;
-  font-family: 'Damion', cursive;
+}
+nav a:hover {
+  color: #ffcaeb;
+  background: whitesmoke;
+}
+.background-image {
+  background-image: url("https://images.unsplash.com/photo-1523294587484-bae6cc870010?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1164&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 600px;
+  position: relative;
+}
+.title-container {
+  background: white;
+  border-radius: 5em;
+  padding: 2em;
+  max-width: 200px;
+  max-height: 200px;
+  text-align: center;
+}
+.title-container h1 {
+  transform: rotate(-5deg);
+  font-family: "Homemade Apple", cursive;
 }
 
 /************************/
@@ -54,7 +83,7 @@ nav a {
   color: white;
   background-color: black;
   border-radius: 1em;
-  font-family: 'Homemade Apple', cursive;
+  font-family: 'Courgette', cursive;
   font-size: 12px;
   align-self: center;
 }
@@ -73,15 +102,11 @@ nav a {
   justify-content: center;
 }
 .title {
-  text-align: center;
+  color: whitesmoke;
+  font-size: 2.5vw;
+  text-align: left;
   font-family: 'Homemade Apple', cursive;
-  transform: rotate(-5deg);
-}
-.background-img {
-  padding: 100px;
-  background: transparent url("https://milkbarstore.com/wp-content/uploads/2018/12/Birthday-Cake-Website-Banner.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+  transform: rotate(-10deg);
 }
 
 
