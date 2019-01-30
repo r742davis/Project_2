@@ -27,8 +27,13 @@ app.use(session({
 	  resave: false,
 	  saveUninitialized: false
 }));
-
-
+ 
+// //Heroku redirect
+// app.get('/', (req, res) => {
+//   Pastry.find({}, (error, allPastries) => {
+//     res.redirect('/bakersdozen')
+//   })
+// })
 
 //----------//
 //Controller//
@@ -41,10 +46,6 @@ app.use('/users', userController)
 //Sessions//
 const sessionsController = require('./controllers/sessions.js');
 app.use('/sessions', sessionsController);
-
-// app.render('index.ejs', {
-// 	currentUser: req.session.currentUser
-// })
 
 
 //------------//
