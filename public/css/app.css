@@ -59,12 +59,11 @@ nav a:hover {
   opacity: 1.0;
 }
 .background-image {
-  background-image: url("https://images.unsplash.com/photo-1523294587484-bae6cc870010?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1164&q=80");
+  background-image: url("https://www.dahliabakery.com/uploads/_1200xAUTO_fit_center-center/DB_Bakery_50-case-shot-copy.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.70;
-  height: 500px;
-  position: relative;
+  opacity: 0.80;
+  height: 1000px;
 }
 .title-container {
   background: whitesmoke;
@@ -80,12 +79,12 @@ nav a:hover {
   opacity: 1.0;
   transform: rotate(-10deg);
   font-family: "Homemade Apple", cursive;
-  font-size: 1.5em;
+  font-size: 1.7em;
   line-height: 1.0;
   text-align: center;
 }
 span {
-  font-size: 1.5em;
+  font-size: 1.25em;
   color: whitesmoke;
   margin: 20px;
 }
@@ -164,6 +163,10 @@ label {
   font-family: 'Ubuntu', sans-serif;
   background: #ffcaeb;
 }
+
+/********************************/
+/*** Log In, Sign In, Welcome ***/
+/********************************/
 .log-in-container {
   display: flex;
   flex-direction: column;
@@ -175,6 +178,7 @@ label {
   height: 400px;
   margin: 0 auto;
   padding: 1em;
+  background: white;
 }
 .log-in-container h2 {
   background: teal;

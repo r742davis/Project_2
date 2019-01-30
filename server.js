@@ -11,8 +11,9 @@ require('dotenv').config()
 const db = mongoose.connection
 const app = express()
 
-// PORT //
-//________________________________________//
+//----//
+//Port//
+//----//
 const PORT = process.env.PORT || 3000
 
 //----------//
@@ -40,7 +41,9 @@ app.use('/users', userController)
 const sessionsController = require('./controllers/sessions.js');
 app.use('/sessions', sessionsController);
 
-//Heroku redirect
+//---------------//
+//Heroku Redirect//
+//---------------//
 app.get('/', (req, res) => {
     res.redirect('/bakersdozen')
 })

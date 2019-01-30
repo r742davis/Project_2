@@ -18,7 +18,7 @@ const Pastry = require('../models/pastries.js')
 // Delete : DELETE '/bakersdozen/:id'      7/7
 
 
-//Delete
+//Delete : 7/7
 router.delete('/:id', (req, res) => {
   Pastry.findByIdAndRemove(req.params.id, (error, data) => {
     res.redirect('/bakersdozen')
@@ -59,6 +59,16 @@ router.get('/seedTest', (req, res) => {
   ], (error, data) => {
     res.redirect('/bakersdozen')
   })
+})
+
+//Bakery Search/Maps
+router.get('/bakeries', (req, res) => {
+  res.render(
+    'bakeries.ejs',
+    {
+      currentUser: req.session.currentUser
+    }
+  )
 })
 
 //About
