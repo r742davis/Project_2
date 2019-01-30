@@ -17,6 +17,7 @@ const Pastry = require('../models/pastries.js')
 // Update : PUT    '/bakersdozen/:id'      6/7
 // Delete : DELETE '/bakersdozen/:id'      7/7
 
+
 //Delete
 router.delete('/:id', (req, res) => {
   Pastry.findByIdAndRemove(req.params.id, (error, data) => {
@@ -30,7 +31,8 @@ router.get('/:id/edit', (req, res) => {
     res.render(
       'edit.ejs',
       {
-        pastry:foundPastry
+        pastry:foundPastry,
+        currentUser: req.session.currentUser
       }
     )
   })
@@ -59,6 +61,15 @@ router.get('/seedTest', (req, res) => {
   })
 })
 
+//About
+router.get('/about', (req, res) => {
+  res.render(
+    'about.ejs',
+    {
+      currentUser: req.session.currentUser
+    }
+  )
+})
 
 //Index
 router.get('/', (req, res) => {
@@ -66,7 +77,8 @@ router.get('/', (req, res) => {
     res.render(
       'index.ejs',
       {
-        pastries:allPastries
+        pastries:allPastries,
+        currentUser: req.session.currentUser
       }
   )
   })
@@ -74,8 +86,12 @@ router.get('/', (req, res) => {
 
 //New
 router.get('/new', (req, res) => {
-  res.render('new.ejs')
-  res.redirect('/bakersdozen')
+  res.render(
+    'new.ejs',
+    {
+      currentUser: req.session.currentUser
+    }
+  )
 })
 
 //Show
@@ -84,7 +100,8 @@ router.get('/:id', (req, res) => {
     res.render(
       'show.ejs',
       {
-        pastry:foundPastry
+        pastry:foundPastry,
+        currentUser: req.session.currentUser
       }
     )
   })
@@ -92,9 +109,15 @@ router.get('/:id', (req, res) => {
 
 //Create
 router.post('/', (req, res) => {
-  Pastry.create(req.body, (error, createdPastry) => {
-    res.redirect('/bakersdozen')
-  })
+  Pastry.create(req.body, (error, createdPastry) => res.render(
+    'index.ejs',
+    {
+      pastries:allPastries,
+      currentUser: req.session.currentUser
+    }
+    )
+  )
 })
+
 
 module.exports = router;

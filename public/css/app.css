@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Cookie|Courgette|Damion|Handlee|Homemade+Apple');
+@import url('https://fonts.googleapis.com/css?family=Cookie|Courgette|Damion|Handlee|Homemade+Apple|Ubuntu');
 
 /************************/
 /*** GENERAL ELEMENTS ***/
@@ -35,7 +35,7 @@ label {
 }
 
 /**********************/
-/*** NAVIGATION BAR ***/
+/*** Navigation Bar ***/
 /**********************/
 nav {
   display: flex;
@@ -63,7 +63,7 @@ nav a:hover {
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.70;
-  height: auto;
+  height: 500px;
   position: relative;
 }
 .title-container {
@@ -73,6 +73,7 @@ nav a:hover {
   margin-top: 5px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .title-container h1 {
   color: black;
@@ -93,7 +94,7 @@ span:hover {
 }
 
 /************************/
-/*** BUTTONS & INPUTS ***/
+/*** Buttons & Inputs ***/
 /************************/
 .btn {
   display: inline-block;
@@ -113,6 +114,9 @@ span:hover {
   border: 1px solid #bbb;
   cursor: pointer;
   box-sizing: border-box;
+}
+.btn:hover {
+  background: #ffcaeb;
 }
 
 .edit-delete-btns {
@@ -151,7 +155,35 @@ textarea {
   height: 150px;
 }
 label {
-
+  font-family: 'Ubuntu', sans-serif;
+}
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Ubuntu', sans-serif;
+  background: #ffcaeb;
+}
+.log-in-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid gray;
+  border-radius: 2em;
+  width: 300px;
+  height: 400px;
+  margin: 0 auto;
+  padding: 1em;
+}
+.log-in-container h2 {
+  background: teal;
+  color: whitesmoke;
+  width: 200px;
+  padding: 10px;
+  border-radius: 1em;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 

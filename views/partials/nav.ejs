@@ -5,17 +5,23 @@
       <a href="#">Bakeries</a>
       <a href="#">Recipes</a>
       <span>
-        <i class="fas fa-home"></i>
+        <!-- <a href="/bakersdozen"> -->
+          <i class="fas fa-home"></i>
+        <!-- </a> -->
       </span>
 
       <div class="title-container">
         <h1>Baker's<br> Dozen</h1>
       </div>
       <span>
+        <% if (currentUser) { %>
+        <i class="fas fa-unlock"></i>
+      <% } else { %>
         <i class="fas fa-lock"></i>
+      <% } %>
       </span>
 
-      <a href="#">About</a>
+      <a href="/bakersdozen/about">About</a>
       <a href="#">Contact</a>
 
     </nav>

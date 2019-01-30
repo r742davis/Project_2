@@ -8,10 +8,9 @@
   </head>
   <body>
     <% include partials/nav.ejs %>
-    
-    <h1>Baker's Dozen</h1>
+
     <h2>Edit Page</h2>
-      <div class="forms">
+      <div class="input-container">
         <form action="/bakersdozen/<%=pastry.id%>?_method=PUT" method="POST">
           <label for="name">Name</label>
             <input type="text" name="name" value="<%=pastry.name%>">
@@ -19,10 +18,11 @@
             <input type="text" name="price" value="<%=pastry.price%>">
           <label for="qty">Quantity</label>
             <input type="text" name="qty" value="<%=pastry.qty%>">
-          <label for="type">Type</label>
+          <label for="recipe">Recipe</label>
             <input type="text" name="recipe" value="<%=pastry.recipe%>">
-          <input type="submit" value="Sumbit Changes">
+          <input class="btn" type="submit" value="Sumbit Changes">
         </form>
+        <a class="btn" href="/bakersdozen">Return to Main Page</a>
       </div>
   </body>
 </html>

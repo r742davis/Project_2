@@ -2,43 +2,52 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Index</title>
-    <link rel="stylesheet" href="/css/app.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.7.0/js/all.js" integrity="sha384-qD/MNBVMm3hVYCbRTSOW130+CWeRIKbpot9/gR1BHkd7sIct4QKhT1hOPd+2hO8K" crossorigin="anonymous"></script>
+    <title>Baker's Dozen</title>
+    <% include partials/head.ejs %>
   </head>
   <body>
     <% include partials/nav.ejs %>
 
-    <div>
-      <h1>Welcome to Baker's Dozen!</h1>
-      <h2>To Edit Your Bakery Offerings, please sign in below:</h2>
-    </div>
-    <div class="log-in">
-      <h2>Please</h2>
-      <a class="btn" href="#">Sign Up</a>
-      <h3>or</h3>
-      <a class="btn" href="#">Log In</a>
-    </div>
+   <% if(currentUser) { %>
+     <div class="welcome-container">
+       <h1>Welcome back <%=currentUser.username%></h1>
+       <a class="btn" href="/bakersdozen/new">Create New Pastry</a>
+       <form class="" action="/sessions?_method=DELETE" method="POST">
+         <input class="btn" type="submit" name="logout" value="Log Out">
+       </form>
+     </div>
 
-
-    <a class="btn" href="/bakersdozen/new">Create New Pastry</a>
     <div class="container">
-    <ul>
-      <% for (let i = 0; i < pastries.length; i++) { %>
-          <li>
-            <a href="/bakersdozen/<%=pastries[i].id%>"><%=pastries[i].name%></a>
-            <% if (pastries[i].img != undefined) { %>
-              <img src="<%=pastries[i].img%>" alt="">
-            <% } %>
-              <div class="edit-delete-btns">
-                <a class="btn" href="/bakersdozen/<%=pastries[i].id%>/edit">Edit</a>
-                <form action="/bakersdozen/<%=pastries[i].id%>?_method=DELETE" method="POST">
-                  <input class="btn" type="submit" name="delete" value="Delete">
-                </form>
-            </div>
-          </li>
-      <% } %>
-    </ul>
+      <ul>
+        <% for (let i = 0; i < pastries.length; i++) { %>
+            <li>
+              <a href="/bakersdozen/<%=pastries[i].id%>"><%=pastries[i].name%></a>
+              <% if (pastries[i].img != undefined) { %>
+                <img src="<%=pastries[i].img%>" alt="">
+              <% } %>
+                <div class="edit-delete-btns">
+                  <a class="btn" href="/bakersdozen/<%=pastries[i].id%>/edit">Edit</a>
+                  <form action="/bakersdozen/<%=pastries[i].id%>?_method=DELETE" method="POST">
+                    <input class="btn" type="submit" name="delete" value="Delete">
+                  </form>
+              </div>
+            </li>
+        <% } %>
+      </ul>
+    </div>
+
+  <% } else { %>
+
+  <div class="welcome-container">
+    <h1>Welcome to Baker's Dozen!</h1>
+    <h2>To Edit Your Bakery Offerings, please sign in below:</h2>
   </div>
+  <div class="log-in-container">
+    <h2>New User?</h2>
+    <a class="btn" href="/users/new">Sign Up</a>
+    <h2>Returning User?</h2>
+    <a class="btn" href="/sessions/new">Log In</a>
+  </div>
+  <% } %>
   </body>
 </html>

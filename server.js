@@ -29,11 +29,22 @@ app.use(session({
 }));
 
 
+
 //----------//
 //Controller//
 //----------//
 const pastriesController = require('./controllers/pastries_controller.js')
 app.use('/bakersdozen', pastriesController)
+//New User//
+const userController = require('./controllers/users.js')
+app.use('/users', userController)
+//Sessions//
+const sessionsController = require('./controllers/sessions.js');
+app.use('/sessions', sessionsController);
+
+// app.render('index.ejs', {
+// 	currentUser: req.session.currentUser
+// })
 
 
 //------------//
