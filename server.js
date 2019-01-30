@@ -27,13 +27,13 @@ app.use(session({
 	  resave: false,
 	  saveUninitialized: false
 }));
- 
-// //Heroku redirect
-// app.get('/', (req, res) => {
-//   Pastry.find({}, (error, allPastries) => {
-//     res.redirect('/bakersdozen')
-//   })
-// })
+
+//Heroku redirect
+app.get('/', (req, res) => {
+  Pastry.find({}, (error, allPastries) => {
+    res.redirect('/bakersdozen')
+  })
+})
 
 //----------//
 //Controller//
