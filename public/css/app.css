@@ -30,6 +30,9 @@ input {
 a {
   text-decoration: none;
 }
+label {
+  margin-top: 1em;
+}
 
 /**********************/
 /*** NAVIGATION BAR ***/
@@ -42,40 +45,46 @@ nav {
   overflow: hidden;
 }
 nav a {
-  color: white;
-  padding: 0.2em;
+  color: black;
+  background: white;
+  opacity: 0.7;
+  padding: 0.4em;
   margin: 5px;
   border-radius: 2em;
-  font-size: 2em;
-  font-family: 'Cookie', cursive;
+  font-size: 1.2em;
 }
 nav a:hover {
-  color: #ffcaeb;
+  color: black;
   background: whitesmoke;
+  opacity: 1.0;
 }
 .background-image {
   background-image: url("https://images.unsplash.com/photo-1523294587484-bae6cc870010?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1164&q=80");
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.8;
-  min-height: 600px;
+  opacity: 0.70;
+  height: auto;
   position: relative;
 }
 .title-container {
-  background: white;
-  border-radius: 5em;
-  padding: 2em;
-  width: 40px;
-  height: 40px;
-  text-align: center;
+  background: whitesmoke;
+  border-radius: 8em;
+  padding: 0.7em;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
 }
 .title-container h1 {
+  color: black;
+  opacity: 1.0;
   transform: rotate(-10deg);
   font-family: "Homemade Apple", cursive;
+  font-size: 1.5em;
   line-height: 1.0;
+  text-align: center;
 }
 span {
-  font-size: 2em;
+  font-size: 1.5em;
   color: whitesmoke;
   margin: 20px;
 }
@@ -87,36 +96,65 @@ span:hover {
 /*** BUTTONS & INPUTS ***/
 /************************/
 .btn {
-  padding: 5px;
-  margin: 5px;
-  color: white;
-  background-color: black;
-  border-radius: 1em;
-  font-family: 'Courgette', cursive;
-  font-size: 12px;
-  align-self: center;
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  color: #555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box;
 }
+
 .edit-delete-btns {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-/***************/
-/*** CLASSES ***/
-/***************/
+/******************/
+/*** Containers ***/
+/******************/
 .container {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.title {
-  color: whitesmoke;
-  font-size: 2.5vw;
-  text-align: left;
-  font-family: 'Homemade Apple', cursive;
-  transform: rotate(-10deg);
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  max-width: 750px;
+  max-height: 750px;
+  background-color: pink;
+  border-radius: 10px;
+  margin-top: 50px;
 }
+.input-container input[type=submit] {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+textarea {
+  display: flex;
+  resize: none;
+  width: 500px;
+  height: 150px;
+}
+label {
+
+}
+
+
 
 
 /******************/

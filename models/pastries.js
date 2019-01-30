@@ -5,7 +5,7 @@ const pastrySchema = new mongoose.Schema({
     name:  {
       type: String,
       required: true },
-    type:  {
+    recipe:  {
       type: String,
       required: true },
     img: String,
