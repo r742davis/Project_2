@@ -119,14 +119,11 @@ router.get('/:id', (req, res) => {
 
 //Create
 router.post('/', (req, res) => {
-  Pastry.create(req.body, (error, createdPastry) => res.render(
-    'index.ejs',
-    {
-      pastries:allPastries,
-      currentUser: req.session.currentUser
+  Pastry.create(req.body, (error, createdPastry) => {
+    if(req.session.currentUser) {
+        res.redirect('/bakersdozen')
     }
-    )
-  )
+  })
 })
 
 

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Cookie|Courgette|Damion|Handlee|Homemade+Apple|Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Cookie|Courgette|Damion|Handlee|Homemade+Apple|Ubuntu|Poiret+One|Dosis');
 
 /************************/
 /*** GENERAL ELEMENTS ***/
@@ -10,6 +10,9 @@ body {
 ul {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 li {
   margin: 0;
@@ -33,63 +36,63 @@ a {
 label {
   margin-top: 1em;
 }
+h1{
+  color: white;
+  font-size: 3em;
+  font-family: 'Courgette', cursive;
+  text-align: center;
+}
 
 /**********************/
 /*** Navigation Bar ***/
 /**********************/
 nav {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
-nav a {
-  color: black;
-  background: white;
-  opacity: 0.7;
+/* nav a {
+  color: whitesmoke;
   padding: 0.4em;
   margin: 5px;
   border-radius: 2em;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 nav a:hover {
   color: black;
   background: whitesmoke;
   opacity: 1.0;
-}
-.background-image {
-  background-image: url("https://www.dahliabakery.com/uploads/_1200xAUTO_fit_center-center/DB_Bakery_50-case-shot-copy.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.80;
-  height: 1000px;
-}
+} */
 .title-container {
-  background: whitesmoke;
+  background: #a8575c;
   border-radius: 8em;
   padding: 0.7em;
   margin-top: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .title-container h1 {
-  color: black;
+  color: whitesmoke;
   opacity: 1.0;
   transform: rotate(-10deg);
   font-family: "Homemade Apple", cursive;
   font-size: 1.7em;
   line-height: 1.0;
-  text-align: center;
 }
-span {
-  font-size: 1.25em;
+.icon {
+  font-size: 1.75em;
   color: whitesmoke;
   margin: 20px;
+  transition: 0.35s;
 }
-span:hover {
-  color: #ffcaeb;
+.icon:hover {
+  color: #a8575c;
+  transition: 0.35s;
 }
 
 /************************/
@@ -97,10 +100,12 @@ span:hover {
 /************************/
 .btn {
   display: inline-block;
-  height: 38px;
-  padding: 0 30px;
-  color: #555;
+  height: 40px;
+  padding: 0 20px;
+  width: 100px;
+  color: whitesmoke;
   text-align: center;
+  font-family: 'Dosis', sans-serif;
   font-size: 11px;
   font-weight: 600;
   line-height: 38px;
@@ -108,20 +113,29 @@ span:hover {
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  background-color: transparent;
+  background-color: teal;
   border-radius: 4px;
-  border: 1px solid #bbb;
+  border: 2px solid teal;
   cursor: pointer;
   box-sizing: border-box;
+  transition: .35s;
 }
 .btn:hover {
-  background: #ffcaeb;
+  background: whitesmoke;
+  border: 2px solid teal;
+  color: teal;
+  transition: 0.35s;
 }
-
 .edit-delete-btns {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+.index-btns {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: space-around;
 }
 
 /******************/
@@ -156,41 +170,56 @@ textarea {
 label {
   font-family: 'Ubuntu', sans-serif;
 }
-.welcome-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'Ubuntu', sans-serif;
-  background: #ffcaeb;
-}
 
 /********************************/
 /*** Log In, Sign In, Welcome ***/
 /********************************/
+
+/* Main Page */
 .log-in-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid gray;
   border-radius: 2em;
   width: 300px;
   height: 400px;
   margin: 0 auto;
+  margin-top: 100px;
   padding: 1em;
-  background: white;
+  background: whitesmoke;
+}
+.log-in-container h1 {
+  text-align: center;
+  color: teal;
 }
 .log-in-container h2 {
-  background: teal;
-  color: whitesmoke;
+  color: teal;
   width: 200px;
   padding: 10px;
   border-radius: 1em;
   text-align: center;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Courgette', sans-serif;
+  font-size: 2em;
+}
+.background-image {
+  background-image: url("https://www.dahliabakery.com/uploads/_1200xAUTO_fit_center-center/DB_Bakery_50-case-shot-copy.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.90;
+  height: 1000px;
 }
 
-
+/* Main Index After Log In */
+.index-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+  border-radius: 2em;
+  margin: 20px;
+  min-height: 500px;
+}
 
 
 /******************/

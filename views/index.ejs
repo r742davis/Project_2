@@ -13,14 +13,16 @@
       <% if(currentUser) { %>
        <div class="welcome-container">
          <h1>Welcome back <%=currentUser.username%></h1>
-         <a class="btn" href="/bakersdozen/new">Create New Pastry</a>
-         <form class="" action="/sessions?_method=DELETE" method="POST">
-           <input class="btn" type="submit" name="logout" value="Log Out">
-         </form>
        </div>
 
       <!-- Pastry Generator if currentUser is logged in -->
-      <div class="container">
+      <div class="index-container">
+        <div class="index-btns">
+          <a class="btn" href="/bakersdozen/new">Create New Pastry</a>
+          <form class="" action="/sessions?_method=DELETE" method="POST">
+            <input class="btn" type="submit" name="logout" value="Log Out">
+          </form>
+        </div>
         <ul>
           <% for (let i = 0; i < pastries.length; i++) { %>
               <li>
@@ -42,14 +44,11 @@
     <% } else { %>
 
     <!-- If currentUser is NOT logged in, then user is asked to sign in or sign up -->
-    <div class="welcome-container">
-      <h1>Welcome to Baker's Dozen!</h1>
-      <h2>To Edit Your Bakery Offerings, please sign in below:</h2>
-    </div>
+
     <div class="log-in-container">
-      <h2>New User?</h2>
+      <h1>Welcome!</h1>
       <a class="btn" href="/users/new">Sign Up</a>
-      <h2>Returning User?</h2>
+      <h2>or</h2>
       <a class="btn" href="/sessions/new">Log In</a>
     </div>
     <% } %>
