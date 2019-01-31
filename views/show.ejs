@@ -6,14 +6,31 @@
     <% include partials/head.ejs %>
   </head>
   <body>
-    <% include partials/nav.ejs %>
-
-    <h1>Show Page</h1>
-      <%=pastry.name%><br>
-      <%=pastry.type%><br>
-      $<%=pastry.price%><br>
-      <%=pastry.qty%><br>
-      <%=pastry.recipe%><br>
-    <a href="/bakersdozen">Return to Index Page</a>
+    <div class="background-image">
+      <% include partials/nav.ejs %>
+      <div class="show-container">
+          <h1><%=pastry.name%></h1>
+          <img src="<%=pastry.img%>" alt="">
+          <div class="description">
+            <%=pastry.description%><br>
+          </div>
+          <div class="">
+            <%=pastry.level%>
+          </div>
+          <div class="">
+            <%=pastry.time%>
+          </div>
+          <div class="">
+            <%=pastry.yield%>
+          </div>
+          <div class="">
+            <%=pastry.ingredients%>
+          </div>
+          <div class="">
+            <%=pastry.directions%>
+          </div>
+        <a class="btn create-btn" href="/bakersdozen">Return to Main Page</a>
+      </div>
+    </div>
   </body>
 </html>

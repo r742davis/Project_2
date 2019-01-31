@@ -7,22 +7,39 @@
     <script defer src="https://use.fontawesome.com/releases/v5.7.0/js/all.js" integrity="sha384-qD/MNBVMm3hVYCbRTSOW130+CWeRIKbpot9/gR1BHkd7sIct4QKhT1hOPd+2hO8K" crossorigin="anonymous"></script>
   </head>
   <body>
+    <div class="background-image">
     <% include partials/nav.ejs %>
 
-    <h2>Edit Page</h2>
-      <div class="input-container">
+      <div class="edit-container">
+        <h1>Edit Your Bakedgood</h1>
         <form action="/bakersdozen/<%=pastry.id%>?_method=PUT" method="POST">
-          <label for="name">Name</label>
-            <input type="text" name="name" value="<%=pastry.name%>">
-          <label for="price">Price</label>
-            <input type="text" name="price" value="<%=pastry.price%>">
-          <label for="qty">Quantity</label>
-            <input type="text" name="qty" value="<%=pastry.qty%>">
-          <label for="recipe">Recipe</label>
-            <input type="text" name="recipe" value="<%=pastry.recipe%>">
-          <input class="btn" type="submit" value="Sumbit Changes">
+        <div class="edit-details-container">
+          <div class="show-input-container">
+            <label for="name">Name</label>
+              <input class="edit input" type="text" name="name" value="<%=pastry.name%>">
+            <label for="name">Image</label>
+              <input class="edit input" type="text" name="img" value="<%=pastry.img%>">
+            <label for="level">Level</label>
+              <input type="text" name="level" value="<%=pastry.level%>">
+            <label for="time">Total Time</label>
+              <input type="text" name="time" value="<%=pastry.time%>">
+            <label for="yield">Yield</label>
+              <input type="text" name="yield" value="<%=pastry.yield%>">
+          </div>
+
+          <div class="textarea-container">
+            <label for="description">Description</label>
+              <textarea name="description" value="<%=pastry.description%>"></textarea>
+            <label for="ingredients">Ingredients</label>
+              <textarea name="ingredients" value="<%=pastry.ingredients%>"></textarea>
+            <label for="directions">Directions</label>
+              <textarea name="directions" value="<%=pastry.directions%>"></textarea>
+          </div>
+        </div>
+
+          <input class="btn" type="submit" value="Submit">
         </form>
-        <a class="btn" href="/bakersdozen">Return to Main Page</a>
       </div>
+    </div>
   </body>
 </html>

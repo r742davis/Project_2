@@ -5,13 +5,15 @@ const pastrySchema = new mongoose.Schema({
     name:  {
       type: String,
       required: true },
-    recipe:  {
+    description:  {
       type: String,
       required: true },
     img: String,
-    recipe: String,
-    price: Number,
-    qty: Number,
+    level: String,
+    time: Number,
+    yield: Number,
+    ingredients: String,
+    directions: String,
     }, {timestamps: true}
 );
 

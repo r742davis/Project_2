@@ -10,9 +10,10 @@ body {
 input {
   display: flex;
   flex-direction: column;
-  height: 20px;
+  height: 30px;
   border: 2px solid silver;
   border-radius: 0.5em;
+  font-size: 18px;
 }
 input:hover {
   border: 2px solid teal;
@@ -168,6 +169,49 @@ nav {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  max-width: 800px;
+  max-height: 750px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  margin-top: 50px;
+  padding: 20px;
+}
+.edit-container h1 {
+  color: teal;
+}
+.edit-container input {
+  align-items: center;
+  text-align: center;
+}
+.edit-details-container {
+  display: flex;
+  flex-direction: row;
+}
+.textarea-container textarea {
+  height: 100px;
+  font-size: 18px;
+}
+.show-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  max-width: 800px;
+  max-height: 750px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  margin-top: 50px;
+  padding: 20px;
+  overflow-y: scroll;
+}
+.show-container h1{
+  color: teal;
+}
 textarea {
   display: flex;
   resize: none;
@@ -247,13 +291,13 @@ textarea:hover {
   height: 450px;
   margin-top: 50px;
 }
-.pastry-container {
+/* .pastry-container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   height: 380px;
   margin-bottom: 50px;
-}
+} */
 .list {
   height: 380px;
   margin-bottom: 50px;
@@ -275,7 +319,7 @@ textarea:hover {
   color: teal;
   transition: 0.35s;
 }
-.pastry-details-container {
+/* .pastry-details-container {
   display: flex;
   flex-direction: column;
   height: 300px;
@@ -284,11 +328,12 @@ textarea:hover {
   align-self: center;
   border: 2px solid teal;
   border-radius: 1em;
-}
+} */
 ul {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
 }
@@ -298,6 +343,7 @@ li {
   list-style: none;
   width: auto;
   height: auto;
+  margin: 20px;
 }
 li img {
   width: 400px;
@@ -321,8 +367,17 @@ li img {
   height: 40px;
 }
 
+/*****************/
+/*** Show Page ***/
+/*****************/
+.description {
+  padding: 20px;
+  font-family: 'Courgette', sans-serif;
+  font-size: 18px;
+}
+
 /******************/
-/*** ANIMATIONS ***/
+/*** Animations ***/
 /******************/
 .swing-in-top-bck {
 	-webkit-animation: swing-in-top-bck 1.0s cubic-bezier(0.9, 0.1, 0.5, 2) both;
