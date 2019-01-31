@@ -11,25 +11,45 @@
       <div class="show-container">
           <h1><%=pastry.name%></h1>
           <img src="<%=pastry.img%>" alt="">
-          <div class="description">
-            <%=pastry.description%><br>
+          <div class="show-stats-container">
+            <div class="show-stats">
+              <div class="stat">
+              <h3>Difficulty:</h3>
+                <p><%=pastry.level%></p>
+              </div>
+              <div class="stat">
+              <h3>Total Time:</h3>
+                <p><%=pastry.time%></p>
+              </div>
+              <div class="stat">
+              <h3>Yield:</h3>
+                <p><%=pastry.yield%></p>
+              </div>
+            </div>
+            <!-- <div class="ingredients">
+              <a href="#">Ingredients</a>
+            </div> -->
+            <div class="">
+              <h3>Directions</h3>
+              <h2>1</h2>
+              <p><%=pastry.directions1%></p>
+              <h2>2</h2>
+              <p><%=pastry.directions2%></p>
+              <h2>3</h2>
+              <p><%=pastry.directions3%></p>
+              <h2>4</h2>
+              <p><%=pastry.directions4%></p>
+              <% if (pastry.directions5) { %>
+              <h2>5</h2>
+              <p><%=pastry.directions5%></p>
+              <% } %>
+              <% if (pastry.directions6) { %>
+              <h2>6</h2>
+              <p><% pastry.directions6%></p>
+              <% } %>
+            </div>
+            <a class="btn create-btn" href="/bakersdozen">Return to Main Page</a>
           </div>
-          <div class="">
-            <%=pastry.level%>
-          </div>
-          <div class="">
-            <%=pastry.time%>
-          </div>
-          <div class="">
-            <%=pastry.yield%>
-          </div>
-          <div class="">
-            <%=pastry.ingredients%>
-          </div>
-          <div class="">
-            <%=pastry.directions%>
-          </div>
-        <a class="btn create-btn" href="/bakersdozen">Return to Main Page</a>
       </div>
     </div>
   </body>

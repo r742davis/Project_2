@@ -11,20 +11,32 @@
       <div class="input-container">
         <h1>Create a New Pastry</h1>
         <form class="new-input" action="/bakersdozen" method="POST">
-          <label for="name">Name (Max: 27 Characters)</label>
+          <label for="name">Name</label>
             <input type="text" name="name">
-          <label for="img">Image (If Available)</label>
+          <label for="name">Image</label>
             <input type="text" name="img">
-          <label for="price">Price</label>
-            <input type="text" name="price">
-          <label for="qty">Quantity Available</label>
-            <input type="text" name="qty">
-          <label for="recipe">Recipe</label>
-            <textarea name="recipe" rows="8" cols="80"></textarea>
-          <input class="btn" type="submit" name="submit" value="Submit">
+          <label for="level">Level</label>
+            <input type="text" name="level">
+           <label for="time">Total Time</label>
+            <input type="text" name="time">
+          <label for="yield">Yield</label>
+            <input type="text" name="yield">
+
+          <label for="directions">Directions - Step 1</label>
+            <input type="text" name="directions1" >
+          <label for="directions">Step 2</label>
+            <input type="text" name="directions2" >
+          <label for="directions">Step 3</label>
+            <input type="text" name="directions3" >
+          <label for="directions">Step 4</label>
+            <input type="text" name="directions4" >
+          <label for="directions">Step 5</label>
+            <input type="text" name="directions5" >
+          <label for="directions">Step 6</label>
+            <input type="text" name="directions6" >
+            <input class="btn" type="submit" value="Submit">
         </form>
       </div>
     </div>
-    <a href="/bakersdozen">Back to Index Page</a>
   </body>
 </html>

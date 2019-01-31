@@ -14,7 +14,7 @@ sessions.post('/', (req, res)=>{
           req.session.currentUser = foundUser
             res.redirect('/bakersdozen')
         } else {
-          res.send('wrong password')
+          res.send('/users/new')
         }
     });
 });

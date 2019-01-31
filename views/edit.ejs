@@ -13,30 +13,30 @@
       <div class="edit-container">
         <h1>Edit Your Bakedgood</h1>
         <form action="/bakersdozen/<%=pastry.id%>?_method=PUT" method="POST">
-        <div class="edit-details-container">
-          <div class="show-input-container">
-            <label for="name">Name</label>
-              <input class="edit input" type="text" name="name" value="<%=pastry.name%>">
-            <label for="name">Image</label>
-              <input class="edit input" type="text" name="img" value="<%=pastry.img%>">
-            <label for="level">Level</label>
-              <input type="text" name="level" value="<%=pastry.level%>">
-            <label for="time">Total Time</label>
-              <input type="text" name="time" value="<%=pastry.time%>">
-            <label for="yield">Yield</label>
-              <input type="text" name="yield" value="<%=pastry.yield%>">
-          </div>
+              <label for="name">Name</label>
+                <input type="text" name="name" value="<%=pastry.name%>">
+              <label for="name">Image</label>
+                <input type="text" name="img" value="<%=pastry.img%>">
+              <label for="level">Level</label>
+                <input type="text" name="level" value="<%=pastry.level%>">
+              <label for="time">Total Time</label>
+                <input type="text" name="time" value="<%=pastry.time%>">
+              <label for="yield">Yield</label>
+                <input type="text" name="yield" value="<%=pastry.yield%>">
 
-          <div class="textarea-container">
-            <label for="description">Description</label>
-              <textarea name="description" value="<%=pastry.description%>"></textarea>
-            <label for="ingredients">Ingredients</label>
-              <textarea name="ingredients" value="<%=pastry.ingredients%>"></textarea>
-            <label for="directions">Directions</label>
-              <textarea name="directions" value="<%=pastry.directions%>"></textarea>
-          </div>
-        </div>
 
+              <label for="directions">Directions - Step 1</label>
+                <input type="text" name="directions1" value="<%=pastry.directions1%>">
+              <label for="directions">Step 2</label>
+                <input type="text" name="directions2" value="<%=pastry.directions2%>">
+              <label for="directions">Step 3</label>
+                <input type="text" name="directions3" value="<%=pastry.directions3%>">
+              <label for="directions">Step 4</label>
+                <input type="text" name="directions4" value="<%=pastry.directions4%>">
+              <label for="directions">Step 5</label>
+                <input type="text" name="directions5" value="<%=pastry.directions5%>">
+              <label for="directions">Step 6</label>
+                <input type="text" name="directions6" value="<%=pastry.directions6%>">
           <input class="btn" type="submit" value="Submit">
         </form>
       </div>
