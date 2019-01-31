@@ -9,24 +9,24 @@
     <div class="background-image">
       <% include partials/nav.ejs %>
 
-      <!-- Welcome div -->
+
       <% if(currentUser) { %>
-       <div class="welcome-container">
-         <h1>Welcome back <%=currentUser.username%></h1>
-       </div>
 
       <!-- Pastry Generator if currentUser is logged in -->
-      <div class="index-container">
+      <div class="index-container swing-in-top-bck">
+        <h1>Welcome back, <%=currentUser.username%></h1>
         <div class="index-btns">
-          <a class="btn" href="/bakersdozen/new">Create New Pastry</a>
+          <a class="btn create-btn" href="/bakersdozen/new">Create New Pastry</a>
           <form class="" action="/sessions?_method=DELETE" method="POST">
             <input class="btn" type="submit" name="logout" value="Log Out">
           </form>
         </div>
+        <div class="overflow">
         <ul>
           <% for (let i = 0; i < pastries.length; i++) { %>
+            <div class="list">
               <li>
-                <a href="/bakersdozen/<%=pastries[i].id%>"><%=pastries[i].name%></a>
+                <a href="/bakersdozen/<%=pastries[i].id%>" name="title"><%=pastries[i].name%></a>
                 <% if (pastries[i].img != undefined) { %>
                   <img src="<%=pastries[i].img%>" alt="">
                 <% } %>
@@ -37,8 +37,10 @@
                     </form>
                 </div>
               </li>
+            </div>
           <% } %>
         </ul>
+        </div>
       </div>
 
     <% } else { %>

@@ -6,20 +6,24 @@
     <% include partials/head.ejs %>
   </head>
   <body>
-    <% include partials/nav.ejs %>
-    <h1>Create a New Pastry</h1>
-    <div class="input-container">
-      <form class="new-input" action="/bakersdozen" method="POST">
-        <label for="name">Name</label>
-          <input type="text" name="name">
-        <label for="price">Price</label>
-          <input type="text" name="price">
-        <label for="qty">Quantity Available</label>
-          <input type="text" name="qty">
-        <label for="recipe">Recipe</label>
-          <textarea name="recipe" rows="8" cols="80"></textarea>
-        <input class="btn" type="submit" name="submit" value="Submit">
-      </form>
+    <div class="background-image">
+      <% include partials/nav.ejs %>
+      <div class="input-container">
+        <h1>Create a New Pastry</h1>
+        <form class="new-input" action="/bakersdozen" method="POST">
+          <label for="name">Name (Max: 27 Characters)</label>
+            <input type="text" name="name">
+          <label for="img">Image (If Available)</label>
+            <input type="text" name="img">
+          <label for="price">Price</label>
+            <input type="text" name="price">
+          <label for="qty">Quantity Available</label>
+            <input type="text" name="qty">
+          <label for="recipe">Recipe</label>
+            <textarea name="recipe" rows="8" cols="80"></textarea>
+          <input class="btn" type="submit" name="submit" value="Submit">
+        </form>
+      </div>
     </div>
     <a href="/bakersdozen">Back to Index Page</a>
   </body>

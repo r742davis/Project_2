@@ -1,19 +1,21 @@
 <nav>
 
+    <a class="nav-links" href="/bakersdozen/about">Bakeries</a>
     <div class="icon">
-      <!-- <a href="/bakersdozen"> -->
+      <a class="icon" href="/bakersdozen">
         <i class="fas fa-home"></i>
-      <!-- </a> -->
+      </a>
     </div>
   <div class="title-container">
     <h1>Baker's<br> Dozen</h1>
   </div>
     <div class="icon">
       <% if (currentUser) { %>
-      <i class="fas fa-unlock"></i>
+        <i class="fas fa-unlock"></i>
     <% } else { %>
       <i class="fas fa-lock"></i>
     <% } %>
     </div>
+    <a class="nav-links" href="/bakersdozen/about">About Us</a>
 
 </nav>
