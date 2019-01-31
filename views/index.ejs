@@ -14,29 +14,38 @@
 
       <!-- Pastry Generator if currentUser is logged in -->
       <div class="index-container swing-in-top-bck">
-        <h1>Welcome back, <%=currentUser.username%></h1>
-        <div class="index-btns">
-          <a class="btn create-btn" href="/bakersdozen/new">Create New Pastry</a>
-          <form class="" action="/sessions?_method=DELETE" method="POST">
-            <input class="btn" type="submit" name="logout" value="Log Out">
-          </form>
+        <div class="header-index">
+          <h1>Welcome back, <%=currentUser.username%></h1>
+          <div class="index-btns">
+            <a class="btn create-btn" href="/bakersdozen/new">Create New Pastry</a>
+            <form class="" action="/sessions?_method=DELETE" method="POST">
+              <input class="btn" type="submit" name="logout" value="Log Out">
+            </form>
+          </div>
         </div>
         <div class="overflow">
         <ul>
           <% for (let i = 0; i < pastries.length; i++) { %>
-            <div class="list">
-              <li>
-                <a href="/bakersdozen/<%=pastries[i].id%>" name="title"><%=pastries[i].name%></a>
-                <% if (pastries[i].img != undefined) { %>
-                  <img src="<%=pastries[i].img%>" alt="">
-                <% } %>
-                  <div class="edit-delete-btns">
-                    <a class="btn" href="/bakersdozen/<%=pastries[i].id%>/edit">Edit</a>
-                    <form action="/bakersdozen/<%=pastries[i].id%>?_method=DELETE" method="POST">
-                      <input class="btn" type="submit" name="delete" value="Delete">
-                    </form>
-                </div>
-              </li>
+            <div class="pastry-container">
+              <div class="list">
+                <li>
+                  <a href="/bakersdozen/<%=pastries[i].id%>" name="title"><%=pastries[i].name%></a>
+                  <% if (pastries[i].img != undefined) { %>
+                    <img src="<%=pastries[i].img%>" alt="">
+                  <% } %>
+                    <div class="edit-delete-btns">
+                      <a class="btn" href="/bakersdozen/<%=pastries[i].id%>/edit">Edit</a>
+                      <form action="/bakersdozen/<%=pastries[i].id%>?_method=DELETE" method="POST">
+                        <input class="btn" type="submit" name="delete" value="Delete">
+                      </form>
+                  </div>
+                </li>
+              </div>
+              <div class="pastry-details-container">
+                  <h3>Price:</h3>
+                  <h3>Qty Ready:</h3>
+                  <h3>Cook Time:</h3>
+              </div>
             </div>
           <% } %>
         </ul>

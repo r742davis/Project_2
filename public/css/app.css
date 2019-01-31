@@ -134,6 +134,8 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  width: 400px;
+  margin: 0 auto;
 }
 .create-btn {
   width: 200px;
@@ -188,7 +190,7 @@ textarea:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   border-radius: 2em;
   width: 300px;
   height: 400px;
@@ -232,15 +234,28 @@ textarea:hover {
   width: 900px;
 }
 .index-container h1 {
-  color: teal;
+  color: white;
+}
+.header-index {
+  background: teal;
+  border: 1px solid teal;
+  border-radius: 1em;
+  padding: 10px;
 }
 .overflow {
-  overflow-y: scroll;
+  overflow: scroll;
   height: 450px;
   margin-top: 50px;
 }
+.pastry-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  height: 380px;
+  margin-bottom: 50px;
+}
 .list {
-  height: 500px;
+  height: 380px;
   margin-bottom: 50px;
 }
 .list a[name=title]{
@@ -252,7 +267,6 @@ textarea:hover {
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
   text-align: center;
-  overflow-y: hidden;
 }
 .list a[name=title]:hover{
   background: whitesmoke;
@@ -260,6 +274,16 @@ textarea:hover {
   border-bottom: none;
   color: teal;
   transition: 0.35s;
+}
+.pastry-details-container {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 400px;
+  margin-left: 20px;
+  align-self: center;
+  border: 2px solid teal;
+  border-radius: 1em;
 }
 ul {
   display: flex;

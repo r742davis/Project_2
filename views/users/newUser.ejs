@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <% include ../partials/head.ejs %>
   </head>
     <body>
-      <div class="container">
-        <h1>Create User</h1>
-        <div class="row">
-          <form class="col s12" action="/users" method="POST">
-            <div class="row">
-              <div class="input-field col s6">
-                <input placeholder="Placeholder" id="username" type="text" class="validate" name="username" required>
-                <label for="username">User Name</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="password" type="password" class="validate" name="password" required>
-                <label for="password">Password</label>
-              </div>
-            </div>
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-              <i class="material-icons right">send</i>
-            </button>
-          </form>
+      <div class="background-image">
+      <nav>
+
+          <a class="nav-links" href="/bakersdozen/about">Bakeries</a>
+          <div class="icon">
+            <a class="icon" href="/bakersdozen">
+              <i class="fas fa-home"></i>
+            </a>
+          </div>
+        <div class="title-container">
+          <h1>Baker's<br> Dozen</h1>
         </div>
+          <div class="icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <a class="nav-links" href="/bakersdozen/about">About Us</a>
+
+      </nav>
+        <div class="log-in-container swing-in-top-bck">
+          <h1>Sign Up</h1>
+          <div class="user-pwd-container">
+            <form action="/users" method="POST">
+              <label for="username">User Name</label>
+                <input type="text" name="username" required>
+              <label for="password">Password</label>
+                <input id="password" type="password" name="password" required>
+              <input class="btn" type="submit" value="Register"></input>
+            </form>
+          </div>
+        </div>
+      </div>
     </body>
 </html>
